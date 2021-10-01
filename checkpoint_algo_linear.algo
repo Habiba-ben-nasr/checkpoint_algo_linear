@@ -1,0 +1,145 @@
+
+/****************Solution elements commains premiére méthode*******/
+ALGORITHM algorithm_methode_one
+VAR
+      arr1: ARRAY_OF INTEGER[];
+      arr2 : ARRAY_OF INTEGER[];
+      i,j=0 : INTEGER;
+      sum=0: INTEGER;
+      
+BEGIN
+  Write("enter the fist array's elements");
+   Read(one);
+   Write("enter the second array's elements");
+   Read(two);
+  REPEAT
+    FOR j FROM 0 TO arr1.lenght-1  STEP step  DO
+      IF ( arr1[i]=arr2[j]) THEN 
+       sum=sum+arr1[i]*2;
+      END_IF
+
+    END_FOR
+    i:=i+1
+   
+  UNTIL (i==one.lenght)
+END
+
+/****************Solution elements commains deuxiére méthode*******/
+ALGORITHM Hashtable_methode_ element_commain
+VAR
+     htab : HASH_TABLE<INTEGER,INTEGER>;
+     T,A,set_keys: ARRAY_OF integer[];
+     count,i,j: INTEGER;
+BEGIN
+
+    FOR i FROM 0 TO T.length-1 STEP step  DO
+        htab.insert(T[i],1)
+    END_FOR
+
+    FOR j FROM 0 TO A.length-1 STEP step  DO
+        IF (hash.lookup(A[i]=true) THEN
+            count:=hash.get(A[i])
+            hash.insert(A[i],count+1)
+
+        ELSE
+            H.insert (A[j],1);
+        END_IF
+    END_FOR
+
+    set_keys = H.getKeys();
+    FOR i FROM 0 TO set_keys-1 STEP step  DO
+        IF (H.get(set_keys[i] <> 1 )) THEN
+            sum = (sum+ set_keys[i])*2;
+        END_IF
+    END_FOR
+END
+
+
+/****************Solution elements différents premiére méthode*******/
+ALGORITHM algorithm_methode_one
+VAR
+    arr1: ARRAY_OF INTEGER[];
+      arr2 : ARRAY_OF INTEGER[];
+      i,j=0 : INTEGER;
+      sum=0: INTEGER;
+       test:BOOLEAN;
+BEGIN
+Write("enter the length of the first list",L1);
+ Read(L1);
+ Write("enter the length of the second list",L2);
+ Read(L2);
+   FOR i FROM 0 TO L1-1 STEP step  DO
+       Write("enter the first list's elements",arr1[i])
+       Read(arr1[i]);
+   END_FOR
+   FOR i FROM 0 TO L2-1 STEP step  DO
+       Write("enter the second list's elements",arr2[i])
+       Read(arr2[i]);
+IF (L1>L2) THEN
+
+    REPEAT
+     test:=true;
+     FOR j FROM 0 TO L2-1  STEP step  DO
+       IF ( arr1[i]<>arr2[j]) THEN 
+        test:=false;
+       END_IF
+     END_FOR
+
+     IF (test= false) THEN
+       sum=sum+arr1[i]*2;
+     END_IF  
+      i:=i+1
+   
+   UNTIL (i==L1-1)
+
+ELSE
+    REPEAT
+  test:=true;
+    FOR j FROM 0 TO L1-1  STEP step  DO
+      IF ( arr2[i]<>arr1[j]) THEN 
+       test:=false;
+      END_IF
+    END_FOR
+
+    IF (test= false) THEN
+       sum=sum+arr2[i]*2;
+    END_IF  
+    i:=i+1
+   
+  UNTIL (i==L2-1)
+END_IF
+END.
+
+
+
+
+/****Solution Element different méthode hash table***//////
+ALGORITHM Hashtable_methode_different
+VAR
+     htab : HASH_TABLE<INTEGER,INTEGER>;
+     T,A,set_keys: ARRAY_OF integer[];
+     count,i,j: INTEGER;
+BEGIN
+
+    FOR i FROM 0 TO T.length-1 STEP step  DO
+        htab.insert(T[i],1)
+    END_FOR
+
+    FOR j FROM 0 TO A.length-1 STEP step  DO
+        IF (hash.lookup(A[i]=true) THEN
+            count:=hash.get(A[i])
+            hash.insert(A[i],count+1)
+
+        ELSE
+            H.insert (A[j],1);
+        END_IF
+    END_FOR
+
+    set_keys = H.getKeys();
+    FOR i FROM 0 TO set_keys-1 STEP step  DO
+        IF (H.get(set_keys[i] = 1 )) THEN
+            sum = sum+ set_keys[i];
+        END_IF
+    END_FOR
+END
+
